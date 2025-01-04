@@ -122,7 +122,7 @@ export const useFormStore = create<FormStore>((set, get) => ({
       const value = state.values[component.id];
       const validationRules = component.config.validation || [];
 
-      validationRules.forEach((rule) => {
+      validationRules.forEach((rule: { type: string; value?: any; message: string }) => {
         let isValid = true;
 
         switch (rule.type) {

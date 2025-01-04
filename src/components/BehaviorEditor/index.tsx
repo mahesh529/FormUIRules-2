@@ -36,34 +36,25 @@ export const BehaviorEditor: React.FC = () => {
   };
 
   const handleExportJSON = () => {
-    // Create a formatted JSON with behaviors
-    const behaviors = layout.components.reduce((acc, component) => {
-      if (component.events?.length) {
-        acc[component.config.label] = component.events;
-      }
-      return acc;
-    }, {} as Record<string, ComponentEvent[]>);
-
+    
     // Create and download file
-    const blob = new Blob([JSON.stringify(behaviors, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify(layout.components, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'form-behaviors.json';
+    a.download = 'form.json';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   };
 
-  const hasBehaviors = layout.components.some(c => c.events?.length > 0);
-
   return (
     <div className="h-[calc(100vh-57px)] flex flex-col">
       {/* Header with Export */}
       <div className="p-4 bg-white border-b border-gray-200 flex justify-between items-center">
         <h2 className="text-lg font-semibold">Form Behaviors</h2>
-        {hasBehaviors && (
+        { (
           <button
             onClick={handleExportJSON}
             className="flex items-center gap-2 px-3 py-2 text-sm text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-colors"

@@ -37,7 +37,6 @@ export interface ComponentConfig {
   step?: number;
   options?: string[];
   defaultValue?: any;
-  validation?: ValidationRule[];
   [key: string]: any;
 }
 
@@ -72,7 +71,6 @@ export interface FormComponent {
   category: ComponentCategory;
   config: ComponentConfig;
   events?: ComponentEvent[];
-  validation?: ValidationRule[];
   properties?: Record<string, any>;
   values?: Record<string, any>;
 }

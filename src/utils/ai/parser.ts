@@ -52,12 +52,12 @@ export const parseBehaviorPrompt = (
   // Find trigger
   const trigger = TRIGGER_PATTERNS.find(
     ({ pattern }) => pattern.test(lowerPrompt)
-  )?.value || 'change';
+  )?.value as 'change' | 'focus' | 'blur' | 'click' || 'change';
 
   // Find action
   const action = ACTION_PATTERNS.find(
     ({ pattern }) => pattern.test(lowerPrompt)
-  )?.value || 'show';
+  )?.value as 'show' | 'hide' | 'enable' | 'disable' | 'setValue' | 'customJs' || 'show';
 
   // Extract conditions
   const conditions = [];

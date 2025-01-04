@@ -28,7 +28,10 @@ export const AIBehaviorInput: React.FC<AIBehaviorInputProps> = ({ onAddBehavior 
       targetIds: parsed.targetComponents,
       conditionGroups: parsed.conditions ? [{
         operator: 'and',
-        conditions: parsed.conditions
+        conditions: parsed.conditions.map(condition => ({
+          ...condition,
+          operator: condition.operator as 'endsWith' | 'startsWith' | 'equals' | 'notEquals' | 'contains' | 'notContains' | 'greaterThan' | 'lessThan' | 'empty' | 'notEmpty' | 'matches'
+        }))
       }] : []
     };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDroppable } from '@dnd-kit/core';
 import { useFormStore } from '../../store/formStore';
 import { ComponentRenderer } from './ComponentRenderer';
@@ -26,6 +26,11 @@ export const Canvas: React.FC<CanvasProps> = ({ preview }) => {
     }
   };
 
+  useEffect(()=>{
+    console.log("layout:",layout)
+  },[layout])
+
+
   return (
     <div
       ref={setNodeRef}
@@ -42,7 +47,8 @@ export const Canvas: React.FC<CanvasProps> = ({ preview }) => {
         ) : (
           <>
             <div className="space-y-2">
-              {layout.components.map((component) => (
+              {
+              layout.components.map((component) => (
                 <ComponentRenderer 
                   key={component.id} 
                   component={component}

@@ -55,16 +55,36 @@ export const handleComponentEvent = (
   targetIds.forEach(targetId => {
     switch (action) {
       case 'show':
-        store.updateComponent(targetId, { config: { visible: true } });
+        store.updateComponent(targetId, { config: {
+          visible: true,
+          label: '',
+          enabled: false,
+          required: false
+        } });
         break;
       case 'hide':
-        store.updateComponent(targetId, { config: { visible: false } });
+        store.updateComponent(targetId, { config: {
+          visible: false,
+          label: '',
+          enabled: false,
+          required: false
+        } });
         break;
       case 'enable':
-        store.updateComponent(targetId, { config: { enabled: true } });
+        store.updateComponent(targetId, { config: {
+          enabled: true,
+          label: '',
+          visible: false,
+          required: false
+        } });
         break;
       case 'disable':
-        store.updateComponent(targetId, { config: { enabled: false } });
+        store.updateComponent(targetId, { config: {
+          enabled: false,
+          label: '',
+          visible: false,
+          required: false
+        } });
         break;
       case 'setValue':
         store.updateValue(targetId, value);

@@ -127,7 +127,7 @@ export const ConditionEditor: React.FC<ConditionEditorProps> = ({ conditions, on
           <button
             type="button"
             onClick={() => {
-              const newConditions = [...group.conditions, { field: 'value', operator: 'equals' }];
+              const newConditions = [...group.conditions, { field: 'value', operator: 'equals' as Condition['operator'] }];
               updateGroup(groupIndex, { conditions: newConditions });
             }}
             className="text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1"

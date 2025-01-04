@@ -9,7 +9,10 @@ interface BaseFileUploadProps {
   accept?: string;
   preview?: React.ReactNode;
   aspectRatio?: string;
+  onFileContent?: (content: string) => void;
+
 }
+
 
 export const BaseFileUpload: React.FC<BaseFileUploadProps> = ({
   component,
