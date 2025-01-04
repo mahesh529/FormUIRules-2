@@ -61,12 +61,6 @@ export interface Condition {
   value?: any;
 }
 
-export interface ValidationRule {
-  type: 'required' | 'min' | 'max' | 'pattern' | 'email' | 'url';
-  message: string;
-  value?: any;
-}
-
 export interface ValidationError {
   componentId: string;
   message: string;

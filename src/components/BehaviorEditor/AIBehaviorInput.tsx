@@ -73,7 +73,7 @@ export const AIBehaviorInput: React.FC<AIBehaviorInputProps> = ({ onAddBehavior 
           <span>Try these examples:</span>
         </div>
         <div className="grid gap-2">
-          {generateBehaviorSuggestions(layout.components[0], layout.components).map((suggestion, index) => (
+          {layout.components.length && generateBehaviorSuggestions(layout.components[0], layout.components).map((suggestion, index) => (
             <button
               key={index}
               onClick={() => setInput(suggestion)}

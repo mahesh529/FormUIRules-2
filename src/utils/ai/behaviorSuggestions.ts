@@ -5,7 +5,7 @@ export const generateBehaviorSuggestions = (
   components: FormComponent[]
 ): string[] => {
   const suggestions: string[] = [];
-  const label = component.config.label;
+  const label = component?.config.label ||'';
 
   // Basic interactions
   suggestions.push(
