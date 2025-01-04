@@ -3,6 +3,7 @@ import { ComponentEvent } from '../../types/form';
 import { useFormStore } from '../../store/formStore';
 import { X } from 'lucide-react';
 
+
 interface EditBehaviorModalProps {
   componentId: string;
   behaviorIndex: number;

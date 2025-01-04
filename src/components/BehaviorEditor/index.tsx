@@ -3,7 +3,7 @@ import { ComponentEvent } from '../../types/form';
 import { useFormStore } from '../../store/formStore';
 import { AIBehaviorInput } from './AIBehaviorInput';
 import { BehaviorList } from './BehaviorList';
-import  EditBehaviorModal  from '../BehaviorEditor';
+import  {EditBehaviorModal}  from './EditBehaviorModal';
 import { Download } from 'lucide-react';
 
 export const BehaviorEditor: React.FC = () => {
