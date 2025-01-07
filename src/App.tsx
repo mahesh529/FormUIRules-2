@@ -123,7 +123,7 @@ export default function App() {
           <div className="flex-1 border-r border-gray-200">
             <Canvas preview />
           </div>
-          <div className="w-[600px]">
+          <div className="w-[800px]"> {/* Increased width for BehaviorEditor */}
             <BehaviorEditor />
           </div>
         </div>

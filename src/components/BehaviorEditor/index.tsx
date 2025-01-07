@@ -71,11 +71,14 @@ export const BehaviorEditor: React.FC = () => {
       </div>
 
       {/* Behavior List */}
-      <BehaviorList 
-        onEdit={(componentId, behaviorIndex) => 
-          setEditingBehavior({ componentId, behaviorIndex })
-        } 
-      />
+      <div className="p-4 bg-white border-b border-gray-200">
+        <h3 className="text-md font-semibold mb-2">Behaviors List</h3>
+        <BehaviorList 
+          onEdit={(componentId, behaviorIndex) => 
+            setEditingBehavior({ componentId, behaviorIndex })
+          } 
+        />
+      </div>
 
       {/* Edit Modal */}
       {editingBehavior && (
